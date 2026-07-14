@@ -1,6 +1,10 @@
 from pydantic import BaseModel
 
 
+# ==========================================================
+# Summary Statistics
+# ==========================================================
+
 class SummaryStatistics(BaseModel):
     max_running_vusers: str
     total_throughput: str
@@ -10,6 +14,10 @@ class SummaryStatistics(BaseModel):
     passed_transactions_ratio: str
 
 
+# ==========================================================
+# Report Information
+# ==========================================================
+
 class ReportInfo(BaseModel):
     title: str
     run_time: str
@@ -18,6 +26,10 @@ class ReportInfo(BaseModel):
     result_name: str
     sla: str
 
+
+# ==========================================================
+# Transactions
+# ==========================================================
 
 class Transaction(BaseModel):
     name: str
@@ -31,14 +43,45 @@ class Transaction(BaseModel):
     stopped: str
 
 
+# ==========================================================
+# HTTP Codes
+# ==========================================================
+
 class HttpCode(BaseModel):
     code: str
     total: str
     per_second: str
 
 
+# ==========================================================
+# Graph Models
+# ==========================================================
+
+class GraphPoint(BaseModel):
+    time: float
+    value: float
+
+
+class GraphSeries(BaseModel):
+    name: str
+    points: list[GraphPoint]
+
+
+class GraphReport(BaseModel):
+    graph_name: str
+    graph_type: str
+    x_axis: str
+    y_axis: str
+    series: list[GraphSeries]
+
+
+# ==========================================================
+# Complete Report
+# ==========================================================
+
 class LoadRunnerReport(BaseModel):
     report: ReportInfo
     statistics: SummaryStatistics
     transactions: list[Transaction]
     http_codes: list[HttpCode]
+    graphs: list[GraphReport] = []

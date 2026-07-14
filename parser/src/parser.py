@@ -1,4 +1,6 @@
 from extractor import HTMLExtractor
+from parsers.graph_parser import GraphParser
+
 from models import (
     LoadRunnerReport,
     ReportInfo,
@@ -132,6 +134,27 @@ class LoadRunnerParser:
         return http_codes
 
     # ---------------------------------------------------------
+    # Graph Parser
+    # ---------------------------------------------------------
+
+    def parse_graphs(self):
+
+        graphs = []
+
+        report_files = self.extractor.get_report_files()
+
+        for report_file in report_files:
+
+            try:
+                graph = GraphParser(report_file).parse()
+                graphs.append(graph)
+
+            except Exception as e:
+                print(f"Failed to parse {report_file.name}: {e}")
+
+        return graphs
+
+    # ---------------------------------------------------------
     # Main Parser
     # ---------------------------------------------------------
 
@@ -142,4 +165,5 @@ class LoadRunnerParser:
             statistics=self.parse_statistics(),
             transactions=self.parse_transactions(),
             http_codes=self.parse_http_codes(),
+            graphs=self.parse_graphs(),
         )

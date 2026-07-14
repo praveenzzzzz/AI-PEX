@@ -1,10 +1,14 @@
+from pathlib import Path
 from bs4 import BeautifulSoup
 
 
 class HTMLExtractor:
 
     def __init__(self, html_path):
-        with open(html_path, "r", encoding="utf-8") as f:
+        self.html_path = Path(html_path)
+        self.report_folder = self.html_path.parent
+
+        with open(self.html_path, "r", encoding="utf-8") as f:
             self.soup = BeautifulSoup(f, "lxml")
 
     def find(self, selector):
@@ -21,3 +25,14 @@ class HTMLExtractor:
             return element.get_text(strip=True)
 
         return ""
+
+    def get_report_files(self):
+        """
+        Returns every Report*.html file.
+        """
+
+        reports = sorted(
+            self.report_folder.glob("Report*.html")
+        )
+
+        return reports
