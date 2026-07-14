@@ -1,0 +1,5 @@
+﻿"Number of Vusers","Action_Transaction","T01_SIGNIN","T02_SELECT_CATEGORY","T03_SELECT_PRODUCT","T04_ADD_TO_CART","T05_CHECKOUT","T06_CONTINUE","T07_CONFIRM","T08_SIGNOUT","TRANSACTION_01_GET","TRANSACTION_02_GET","TRANSACTION_03_GETID","vuser_end_Transaction","vuser_init_Transaction"
+"0","3.297","","","","","","","","","","","0.394","0",""
+"1","2.719","","","","","","","","","1.896","0.616","0.392","0",""
+"2","2.907","1.354","0.176","0.284","","","","1.222","0.407","1.879","0.647","0.329","0.407","0.002"
+"3","2.456","","","","0.172","0.189","0.47","","","1.661","0.542","0.262","","0.002"

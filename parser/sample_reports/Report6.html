@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+		<title></title>
+		<link href="Properties.css" rel="stylesheet" media="screen">
+		<link href="adv_properties.css" rel="stylesheet" media="screen">
+		<csactions>
+			<csaction name="BC43C8C88" class="Goto Link" type="onevent" val0="Report6.csv" val1="" urlparams="1"></csaction>
+		</csactions>
+		<script src="jquery.min.js"></script>
+		<script type="text/javascript" src="JSFunctions.js"></script>
+		<script type="text/javascript" src="echarts.min.js"></script>
+		<csscriptdict>
+			<script type="text/javascript" src="CSScriptDict.js"></script>
+		</csscriptdict>
+		<csactiondict>
+			<script type="text/javascript">
+				CSAct[/*CMP*/ 'BC43C8C88'] = new Array(CSGotoLink,/*URL*/ 'Report6.csv','');
+			</script>
+		</csactiondict>
+		<script type="text/javascript" src="translation-resources-html_de.js"></script>
+		<script type="text/javascript" src="translation-resources-html_es.js"></script>
+		<script type="text/javascript" src="translation-resources-html_fr.js"></script>
+		<script type="text/javascript" src="translation-resources-html_it.js"></script>
+		<script type="text/javascript" src="translation-resources-html_ja.js"></script>
+		<script type="text/javascript" src="translation-resources-html_ko.js"></script>
+		<script type="text/javascript" src="translation-resources-html_ru.js"></script>
+		<script type="text/javascript" src="translation-resources-html_zh_CN.js"></script>
+		<script type="text/javascript" src="translation-engine.js"></script>
+	</head> 
+	<body class="main graph-page">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="sp_10px_row"></td>
+			</tr>
+			<tr>
+				<td>
+					<table cols="2" width="100%" height="20" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+	
+<td class="header_page">Transaction Response Time Under Load</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="sp_10px_row"></td>
+			</tr>
+			<tr>
+				<td>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>
+								<table class="TableSummary" summary="Graph Summary Table">
+		<tr>
+									<tr class="LraGranularity">
+									<td class="text_graph_page" id="LraGranularity key">
+									    <font class="header_key">Granularity:</font>
+									</td>
+									<td class="text_graph_page" id="LraGranularity val">
+									    <font class="header_value"> 1 Second</font>
+									</td>
+									</tr>
+								</table>
+							</td>
+							<td align="right" valign="top" width="180">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>Open in Excel</td>
+										<td>&nbsp;&nbsp;</td>
+										<td><button class="bu_toexcel" onclick="CSAction(new Array(/*CMP*/'BC43C8C88'));" name="buttonName" type="button" csclick="BC43C8C88">&nbsp;</button></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="sp_10px_row"></td>
+			</tr>
+			<tr>
+				<td>
+					<div class="pane_full" style="display:none">
+			<tr>
+				<td>
+					<div id="graphContainer" class="pane_full graph">Transaction Response Time Under Load</div>
+					<div id="xAxisTitle" class="data_tags">Number of Vusers</div>
+					<div id="yAxisTitle" class="data_tags">Average Response Time (seconds)</div>
+					<div id="yRightAxisTitle" class="data_tags"></div>
+					<div id="Type" class="data_tags">line</div>
+					<div id="timeBasedLinearGraph" class="data_tags">false</div>
+					<div id="overlayType" class="data_tags">Correlate</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="sp_10px_row"></td>
+			</tr>
+<div class="GraphData" id="GraphSeriesData">
+<table class="GraphData" id="Values_0" title="Action_Transaction" axis="1" stairs="false" timeBased="">
+<tr>
+<td>0</td><td>3.2972519</td>
+</tr>
+<tr>
+<td>1</td><td>2.71873839</td>
+</tr>
+<tr>
+<td>2</td><td>2.90658785</td>
+</tr>
+<tr>
+<td>3</td><td>2.45627312</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_1" title="T01_SIGNIN" axis="1" stairs="false" timeBased="">
+<tr>
+<td>2</td><td>1.3544483</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_2" title="T02_SELECT_CATEGORY" axis="1" stairs="false" timeBased="">
+<tr>
+<td>2</td><td>0.1757467</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_3" title="T03_SELECT_PRODUCT" axis="1" stairs="false" timeBased="">
+<tr>
+<td>2</td><td>0.2836251</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_4" title="T04_ADD_TO_CART" axis="1" stairs="false" timeBased="">
+<tr>
+<td>3</td><td>0.1717098</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_5" title="T05_CHECKOUT" axis="1" stairs="false" timeBased="">
+<tr>
+<td>3</td><td>0.1890833</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_6" title="T06_CONTINUE" axis="1" stairs="false" timeBased="">
+<tr>
+<td>3</td><td>0.46958779</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_7" title="T07_CONFIRM" axis="1" stairs="false" timeBased="">
+<tr>
+<td>2</td><td>1.22224899</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_8" title="T08_SIGNOUT" axis="1" stairs="false" timeBased="">
+<tr>
+<td>2</td><td>0.4066763</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_9" title="TRANSACTION_01_GET" axis="1" stairs="false" timeBased="">
+<tr>
+<td>1</td><td>1.89553435</td>
+</tr>
+<tr>
+<td>2</td><td>1.87912936</td>
+</tr>
+<tr>
+<td>3</td><td>1.66081212</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_10" title="TRANSACTION_02_GET" axis="1" stairs="false" timeBased="">
+<tr>
+<td>1</td><td>0.6160648</td>
+</tr>
+<tr>
+<td>2</td><td>0.64704031</td>
+</tr>
+<tr>
+<td>3</td><td>0.54163765</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_11" title="TRANSACTION_03_GETID" axis="1" stairs="false" timeBased="">
+<tr>
+<td>0</td><td>0.3935158</td>
+</tr>
+<tr>
+<td>1</td><td>0.39249252</td>
+</tr>
+<tr>
+<td>2</td><td>0.32871393</td>
+</tr>
+<tr>
+<td>3</td><td>0.26159978</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_12" title="vuser_end_Transaction" axis="1" stairs="false" timeBased="">
+<tr>
+<td>0</td><td>1.79e-05</td>
+</tr>
+<tr>
+<td>1</td><td>2.19e-05</td>
+</tr>
+<tr>
+<td>2</td><td>0.4067802</td>
+</tr>
+</table>
+<table class="GraphData" id="Values_13" title="vuser_init_Transaction" axis="1" stairs="false" timeBased="">
+<tr>
+<td>2</td><td>0.00184499</td>
+</tr>
+<tr>
+<td>3</td><td>0.0015759</td>
+</tr>
+</table>
+</div>
+<div id="SeriesCount">14</div>
+
+			<tr>
+				<td>
+					<div class="pane_full">
+<table width="100%" class="legendTable">
+<tr class="legendHeader">
+<td class="color_header">
+Color
+</td>
+<td>
+Scale
+</td>
+<td>
+Measurement
+</td>
+<td>
+Minimum
+</td>
+<td>
+Average
+</td>
+<td>
+Maximum
+</td>
+<td>
+Std. Deviation
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_0" style="background-color: #2C9B82;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+Action_Transaction
+</td>
+<td>
+2.165
+</td>
+<td>
+2.864
+</td>
+<td>
+9.889
+</td>
+<td>
+1.045
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_1" style="background-color: #D74141;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+T01_SIGNIN
+</td>
+<td>
+1.354
+</td>
+<td>
+1.354
+</td>
+<td>
+1.354
+</td>
+<td>
+0.000
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_2" style="background-color: #F5C500;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+T02_SELECT_CATEGORY
+</td>
+<td>
+0.176
+</td>
+<td>
+0.176
+</td>
+<td>
+0.176
+</td>
+<td>
+0.000
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_3" style="background-color: #2087C9;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+T03_SELECT_PRODUCT
+</td>
+<td>
+0.284
+</td>
+<td>
+0.284
+</td>
+<td>
+0.284
+</td>
+<td>
+0.000
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_4" style="background-color: #66C2CC;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+T04_ADD_TO_CART
+</td>
+<td>
+0.172
+</td>
+<td>
+0.172
+</td>
+<td>
+0.172
+</td>
+<td>
+0.000
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_5" style="background-color: #A44B6D;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+T05_CHECKOUT
+</td>
+<td>
+0.189
+</td>
+<td>
+0.189
+</td>
+<td>
+0.189
+</td>
+<td>
+0.000
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_6" style="background-color: #FF7345;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+T06_CONTINUE
+</td>
+<td>
+0.470
+</td>
+<td>
+0.470
+</td>
+<td>
+0.470
+</td>
+<td>
+0.000
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_7" style="background-color: #E3E55C;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+T07_CONFIRM
+</td>
+<td>
+1.222
+</td>
+<td>
+1.222
+</td>
+<td>
+1.222
+</td>
+<td>
+0.000
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_8" style="background-color: #FA9690;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+T08_SIGNOUT
+</td>
+<td>
+0.407
+</td>
+<td>
+0.407
+</td>
+<td>
+0.407
+</td>
+<td>
+0.000
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_9" style="background-color: #81529F;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+TRANSACTION_01_GET
+</td>
+<td>
+1.361
+</td>
+<td>
+1.841
+</td>
+<td>
+6.230
+</td>
+<td>
+0.517
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_10" style="background-color: #FFE400;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+TRANSACTION_02_GET
+</td>
+<td>
+0.464
+</td>
+<td>
+0.630
+</td>
+<td>
+2.572
+</td>
+<td>
+0.297
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_11" style="background-color: #17C797;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+TRANSACTION_03_GETID
+</td>
+<td>
+0.231
+</td>
+<td>
+0.320
+</td>
+<td>
+1.996
+</td>
+<td>
+0.181
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_12" style="background-color: #F45B95;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+vuser_end_Transaction
+</td>
+<td>
+0.000
+</td>
+<td>
+0.136
+</td>
+<td>
+0.407
+</td>
+<td>
+0.192
+</td>
+</tr>
+<tr class="legendRow">
+<td>
+<div class="color_circle" id="color_13" style="background-color: #90ABB8;"></div>
+</td>
+<td>
+1
+</td>
+<td>
+vuser_init_Transaction
+</td>
+<td>
+0.001
+</td>
+<td>
+0.002
+</td>
+<td>
+0.002
+</td>
+<td>
+0.000
+</td>
+</tr>
+</table>
+
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="sp_10px_row"></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+</html>
