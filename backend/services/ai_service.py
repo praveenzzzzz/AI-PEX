@@ -1,8 +1,12 @@
 import json
+
 from ollama import chat
 
 
 class AIService:
+
+    def __init__(self):
+        self.model = "qwen2.5:3b"
 
     def analyze(self, report_data: dict):
 
@@ -10,69 +14,115 @@ class AIService:
         print("AI SERVICE STARTED")
         print("=" * 60)
 
+        statistics = report_data.get("statistics", {})
+
+        transactions = report_data.get("transactions", [])
+
+        top_transactions = sorted(
+            transactions,
+            key=lambda t: t.get("average_response_time", 0),
+            reverse=True
+        )[:10]
+
+        compact_report = {
+            "statistics": statistics,
+            "transactions": top_transactions,
+            "http_codes": report_data.get("http_codes", [])
+        }
+
         prompt = f"""
-You are a Senior Performance Engineer with over 15 years of experience in:
+You are a Senior Performance Engineer.
 
-- LoadRunner
-- JMeter
-- Performance Engineering
-- Performance Tuning
-- API Performance
-- Web Application Performance
-- Grafana
-- Prometheus
-- Root Cause Analysis
-
-Analyze the following LoadRunner Performance Report.
+Analyze the following LoadRunner report.
 
 Return ONLY valid JSON.
 
-Do NOT write markdown.
-
-Do NOT explain anything.
-
-Do NOT wrap the response inside triple backticks.
-
-Return ONLY this JSON format:
+Output format:
 
 {{
-    "overall_health": "",
-    "health_score": 0,
-    "risk_level": "",
-    "key_observations": [],
-    "bottlenecks": [],
-    "recommendations": []
+    "overall_health":"",
+    "health_score":0,
+    "risk_level":"",
+    "key_observations":[],
+    "bottlenecks":[],
+    "recommendations":[]
 }}
 
-Rules:
+Report:
 
-- health_score must be between 0 and 100.
-- risk_level must be either:
-  - Low
-  - Medium
-  - High
-- Use ONLY information present in the report.
-- Never invent metrics.
-- If there are no bottlenecks, return an empty array [].
-
-Performance Report:
-
-{json.dumps(report_data, indent=2)}
+{json.dumps(compact_report)}
 """
 
         print("Sending prompt to Ollama...")
 
         response = chat(
-            model="qwen2.5:3b",
+            model=self.model,
             format="json",
+            options={
+                "temperature": 0,
+                "num_predict": 350
+            },
             messages=[
                 {
                     "role": "user",
-                    "content": prompt,
+                    "content": prompt
                 }
-            ],
+            ]
         )
 
-        print("Ollama Response Received")
+        print("AI Response Received")
+
+        return json.loads(response.message.content)
+
+    def chat(
+        self,
+        question: str,
+        report: dict,
+    ):
+
+        prompt = f"""
+You are a Senior Performance Engineer.
+
+You are helping a user understand a performance testing report.
+
+Use ONLY the information present in the report.
+
+If the answer is unavailable, say so.
+
+Performance Report:
+
+{json.dumps(report, indent=2)}
+
+User Question:
+
+{question}
+
+Provide:
+- A clear answer
+- Short explanation
+- Recommendation (if applicable)
+
+Do not use markdown.
+"""
+
+        print("=" * 60)
+        print("AI CHAT STARTED")
+        print("=" * 60)
+
+        response = chat(
+            model=self.model,
+            options={
+                "temperature": 0.2,
+                "num_predict": 300
+            },
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        )
+
+        print("AI CHAT COMPLETED")
 
         return response.message.content
